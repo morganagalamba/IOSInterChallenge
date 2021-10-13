@@ -26,7 +26,6 @@
 		BA0CF8F626336DB5007BDFC8 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0CF8F426336DB5007BDFC8 /* PhotoTableViewCell.xib */; };
 		BA0CF8FA26336FEB007BDFC8 /* PhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8F926336FEB007BDFC8 /* PhotoTableViewController.swift */; };
 		BA0CF8FE26337023007BDFC8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8FD26337023007BDFC8 /* Photo.swift */; };
-		BA0CF9022633764E007BDFC8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF9012633764E007BDFC8 /* DetailsViewController.swift */; };
 		BA93F7EC2632035800CE8AFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93F7EB2632035800CE8AFF /* AppDelegate.swift */; };
 		BA93F7EE2632035800CE8AFF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93F7ED2632035800CE8AFF /* SceneDelegate.swift */; };
 		BA93F7F02632035800CE8AFF /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93F7EF2632035800CE8AFF /* ChallengeViewController.swift */; };
@@ -35,6 +34,7 @@
 		BA93F7F82632035A00CE8AFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA93F7F62632035A00CE8AFF /* LaunchScreen.storyboard */; };
 		BA93F8032632035A00CE8AFF /* InterChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93F8022632035A00CE8AFF /* InterChallengeTests.swift */; };
 		BA93F80E2632035A00CE8AFF /* InterChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93F80D2632035A00CE8AFF /* InterChallengeUITests.swift */; };
+		D7AF7D15271664F000B0E1B4 /* DetailsViewControllerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +136,6 @@
 		BA0CF8F426336DB5007BDFC8 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		BA0CF8F926336FEB007BDFC8 /* PhotoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewController.swift; sourceTree = "<group>"; };
 		BA0CF8FD26337023007BDFC8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		BA0CF9012633764E007BDFC8 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BA93F7E82632035800CE8AFF /* InterChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA93F7EB2632035800CE8AFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA93F7ED2632035800CE8AFF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +150,7 @@
 		BA93F8092632035A00CE8AFF /* InterChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InterChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA93F80D2632035A00CE8AFF /* InterChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterChallengeUITests.swift; sourceTree = "<group>"; };
 		BA93F80F2632035A00CE8AFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 				BA0CF8D526334FF0007BDFC8 /* CommentTableViewController.swift */,
 				BA0CF8EA26336B40007BDFC8 /* AlbumTableViewController.swift */,
 				BA0CF8F926336FEB007BDFC8 /* PhotoTableViewController.swift */,
-				BA0CF9012633764E007BDFC8 /* DetailsViewController.swift */,
+				D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -529,8 +529,8 @@
 				BA0CF8B92632F566007BDFC8 /* UserTableViewCell.swift in Sources */,
 				BA0CF8D626334FF0007BDFC8 /* CommentTableViewController.swift in Sources */,
 				BA0CF8E426336A9A007BDFC8 /* AlbumTableViewCell.swift in Sources */,
+				D7AF7D15271664F000B0E1B4 /* DetailsViewControllerCode.swift in Sources */,
 				BA0CF8FA26336FEB007BDFC8 /* PhotoTableViewController.swift in Sources */,
-				BA0CF9022633764E007BDFC8 /* DetailsViewController.swift in Sources */,
 				BA93F7F02632035800CE8AFF /* ChallengeViewController.swift in Sources */,
 				BA93F7EC2632035800CE8AFF /* AppDelegate.swift in Sources */,
 				BA0CF8DE263358E5007BDFC8 /* Comment.swift in Sources */,
