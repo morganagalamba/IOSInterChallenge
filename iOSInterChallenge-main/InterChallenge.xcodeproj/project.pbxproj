@@ -12,10 +12,6 @@
 		BA0CF8B92632F566007BDFC8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8B72632F566007BDFC8 /* UserTableViewCell.swift */; };
 		BA0CF8BA2632F566007BDFC8 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0CF8B82632F566007BDFC8 /* UserTableViewCell.xib */; };
 		BA0CF8C12632F7E3007BDFC8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8C02632F7E3007BDFC8 /* User.swift */; };
-		BA0CF8CD26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8CB26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.swift */; };
-		BA0CF8CE26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA0CF8CC26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.xib */; };
-		BA0CF8D226334FDB007BDFC8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8D126334FDB007BDFC8 /* PostTableViewController.swift */; };
-		BA0CF8D626334FF0007BDFC8 /* CommentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8D526334FF0007BDFC8 /* CommentTableViewController.swift */; };
 		BA0CF8DA26335759007BDFC8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8D926335759007BDFC8 /* Post.swift */; };
 		BA0CF8DE263358E5007BDFC8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8DD263358E5007BDFC8 /* Comment.swift */; };
 		BA0CF8EF26336B59007BDFC8 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0CF8EE26336B59007BDFC8 /* Album.swift */; };
@@ -32,6 +28,9 @@
 		D71F6385271713770017E44E /* PhotoTableViewCellCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F6384271713770017E44E /* PhotoTableViewCellCode.swift */; };
 		D71F63872717ABDA0017E44E /* AlbumTableViewCellCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F63862717ABDA0017E44E /* AlbumTableViewCellCode.swift */; };
 		D71F63892717AC090017E44E /* AlbumTableViewControllerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F63882717AC090017E44E /* AlbumTableViewControllerCode.swift */; };
+		D71F638B2717B6540017E44E /* CommentTableViewControllerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F638A2717B6540017E44E /* CommentTableViewControllerCode.swift */; };
+		D71F638D2717B6A50017E44E /* TitleAndDescriptionTableViewCellCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F638C2717B6A50017E44E /* TitleAndDescriptionTableViewCellCode.swift */; };
+		D71F638F2717C08E0017E44E /* PostTableViewControllerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F638E2717C08D0017E44E /* PostTableViewControllerCode.swift */; };
 		D7AF7D15271664F000B0E1B4 /* DetailsViewControllerCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,10 +119,6 @@
 		BA0CF8B72632F566007BDFC8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		BA0CF8B82632F566007BDFC8 /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		BA0CF8C02632F7E3007BDFC8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BA0CF8CB26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		BA0CF8CC26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleAndDescriptionTableViewCell.xib; sourceTree = "<group>"; };
-		BA0CF8D126334FDB007BDFC8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
-		BA0CF8D526334FF0007BDFC8 /* CommentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewController.swift; sourceTree = "<group>"; };
 		BA0CF8D926335759007BDFC8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BA0CF8DD263358E5007BDFC8 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BA0CF8EE26336B59007BDFC8 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -146,6 +141,9 @@
 		D71F6384271713770017E44E /* PhotoTableViewCellCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCellCode.swift; sourceTree = "<group>"; };
 		D71F63862717ABDA0017E44E /* AlbumTableViewCellCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCellCode.swift; sourceTree = "<group>"; };
 		D71F63882717AC090017E44E /* AlbumTableViewControllerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewControllerCode.swift; sourceTree = "<group>"; };
+		D71F638A2717B6540017E44E /* CommentTableViewControllerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewControllerCode.swift; sourceTree = "<group>"; };
+		D71F638C2717B6A50017E44E /* TitleAndDescriptionTableViewCellCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndDescriptionTableViewCellCode.swift; sourceTree = "<group>"; };
+		D71F638E2717C08D0017E44E /* PostTableViewControllerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewControllerCode.swift; sourceTree = "<group>"; };
 		D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewControllerCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,8 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				BA93F7EF2632035800CE8AFF /* ChallengeViewController.swift */,
-				BA0CF8D126334FDB007BDFC8 /* PostTableViewController.swift */,
-				BA0CF8D526334FF0007BDFC8 /* CommentTableViewController.swift */,
+				D71F638E2717C08D0017E44E /* PostTableViewControllerCode.swift */,
+				D71F638A2717B6540017E44E /* CommentTableViewControllerCode.swift */,
 				D71F63792717090C0017E44E /* PhotoTableViewControllerCode.swift */,
 				D7AF7D14271664F000B0E1B4 /* DetailsViewControllerCode.swift */,
 				D71F63882717AC090017E44E /* AlbumTableViewControllerCode.swift */,
@@ -245,8 +243,7 @@
 		BA0CF8CA26334B99007BDFC8 /* Post and Comment */ = {
 			isa = PBXGroup;
 			children = (
-				BA0CF8CB26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.swift */,
-				BA0CF8CC26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.xib */,
+				D71F638C2717B6A50017E44E /* TitleAndDescriptionTableViewCellCode.swift */,
 			);
 			path = "Post and Comment";
 			sourceTree = "<group>";
@@ -487,7 +484,6 @@
 				BA0CF8BA2632F566007BDFC8 /* UserTableViewCell.xib in Resources */,
 				BA93F7F82632035A00CE8AFF /* LaunchScreen.storyboard in Resources */,
 				BA93F7F52632035A00CE8AFF /* Assets.xcassets in Resources */,
-				BA0CF8CE26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.xib in Resources */,
 				BA93F7F32632035800CE8AFF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,10 +513,11 @@
 				BA0CF8EF26336B59007BDFC8 /* Album.swift in Sources */,
 				BA0CF8C12632F7E3007BDFC8 /* User.swift in Sources */,
 				D71F6385271713770017E44E /* PhotoTableViewCellCode.swift in Sources */,
+				D71F638D2717B6A50017E44E /* TitleAndDescriptionTableViewCellCode.swift in Sources */,
 				D71F63892717AC090017E44E /* AlbumTableViewControllerCode.swift in Sources */,
 				D71F637A2717090C0017E44E /* PhotoTableViewControllerCode.swift in Sources */,
 				BA0CF8B92632F566007BDFC8 /* UserTableViewCell.swift in Sources */,
-				BA0CF8D626334FF0007BDFC8 /* CommentTableViewController.swift in Sources */,
+				D71F638F2717C08E0017E44E /* PostTableViewControllerCode.swift in Sources */,
 				D7AF7D15271664F000B0E1B4 /* DetailsViewControllerCode.swift in Sources */,
 				D71F63872717ABDA0017E44E /* AlbumTableViewCellCode.swift in Sources */,
 				BA93F7F02632035800CE8AFF /* ChallengeViewController.swift in Sources */,
@@ -528,8 +525,7 @@
 				BA0CF8DE263358E5007BDFC8 /* Comment.swift in Sources */,
 				BA93F7EE2632035800CE8AFF /* SceneDelegate.swift in Sources */,
 				BA0CF8DA26335759007BDFC8 /* Post.swift in Sources */,
-				BA0CF8D226334FDB007BDFC8 /* PostTableViewController.swift in Sources */,
-				BA0CF8CD26334BC3007BDFC8 /* TitleAndDescriptionTableViewCell.swift in Sources */,
+				D71F638B2717B6540017E44E /* CommentTableViewControllerCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,7 +31,7 @@ class AlbumTableViewCellCode: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        albumNameLabel.frame = CGRect(x:5, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
+        albumNameLabel.frame = CGRect(x:10, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
                 
     }
     

@@ -55,18 +55,7 @@ class ChallengeViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Navigation
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-        
-        if let destinationVC = segue.destination as? PostTableViewController {
-            if let info = sender as? (id: Int, name: String) {
-                destinationVC.userId = info.id
-                destinationVC.userName = info.name
-            }
-        }
-    }
 }
 
 extension ChallengeViewController: UserTableViewCellDelegate {
@@ -81,6 +70,10 @@ extension ChallengeViewController: UserTableViewCellDelegate {
     
     func didTapPosts(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
-        performSegue(withIdentifier: "challengeToPost", sender: userIdAndName)
+        //performSegue(withIdentifier: "challengeToPost", sender: userIdAndName)
+        let rootVC = PostTableViewControllerCode()
+        rootVC.userId = userIdAndName.id
+        rootVC.userName = userIdAndName.name
+        self.navigationController?.pushViewController(rootVC, animated: true)
     }
 }
