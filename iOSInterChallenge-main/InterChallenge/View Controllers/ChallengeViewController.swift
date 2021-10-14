@@ -58,12 +58,7 @@ class ChallengeViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? AlbumTableViewController {
-            if let info = sender as? (id: Int, name: String) {
-                destinationVC.userId = info.id
-                destinationVC.userName = info.name
-            }
-        }
+       
         
         if let destinationVC = segue.destination as? PostTableViewController {
             if let info = sender as? (id: Int, name: String) {
@@ -77,7 +72,11 @@ class ChallengeViewController: UITableViewController {
 extension ChallengeViewController: UserTableViewCellDelegate {
     func didTapAlbums(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
-        performSegue(withIdentifier: "challengeToAlbum", sender: userIdAndName)
+        //performSegue(withIdentifier: "challengeToAlbum", sender: userIdAndName)
+        let rootVC = AlbumTableViewControllerCode()
+        rootVC.userId = userIdAndName.id
+        rootVC.userName = userIdAndName.name
+        self.navigationController?.pushViewController(rootVC, animated: true)
     }
     
     func didTapPosts(with userId: Int, by name: String) {

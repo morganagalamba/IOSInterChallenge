@@ -1,16 +1,22 @@
+//
+//  AlbumTableViewControllerCode.swift
+//  InterChallenge
+//
+//  Created by Morgana Galamba on 13/10/21.
+//
 import Alamofire
 import UIKit
 
-class AlbumTableViewController: UITableViewController {
-
+class AlbumTableViewControllerCode: UITableViewController {
+    
     var userId = Int()
     var userName = String()
     var albums = [Album]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Álbuns de \(userName)"
-        tableView.register(UINib(nibName: "AlbumTableViewCell", bundle: nil), forCellReuseIdentifier: "AlbumCell")
+        tableView.register(AlbumTableViewCellCode.self, forCellReuseIdentifier: AlbumTableViewCellCode.identifier)
         fillAlbums(from: userId)
     }
     
@@ -38,34 +44,33 @@ class AlbumTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return albums.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumCell", for: indexPath) as? AlbumTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableViewCellCode.identifier, for: indexPath) as? AlbumTableViewCellCode else {
             return UITableViewCell()
         }
 
         let album = albums[indexPath.row]
         cell.albumNameLabel.text = album.title
-
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let albumId = albums[indexPath.row].id
-        performSegue(withIdentifier: "albumToPhoto", sender: albumId)
-    }
+        let rootVC = PhotoTableViewControllerCode()
+        rootVC.albumId = albumId
+        self.navigationController?.pushViewController(rootVC, animated: true)
 
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinatoinVC = segue.destination as? PhotoTableViewController {
-            if let albumId = sender as? Int {
-                destinatoinVC.userName = userName
-                destinatoinVC.albumId = albumId
-            }
-        }
     }
+   
+
 }
