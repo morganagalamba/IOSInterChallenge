@@ -56,11 +56,9 @@ class CommentTableViewControllerCode: UITableViewController {
          cell.selectionStyle = .none
          cell.titleLabel.text = comment.name
          cell.descriptionLabel.text = comment.body
-
+   
          return cell
      }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+
+
 }

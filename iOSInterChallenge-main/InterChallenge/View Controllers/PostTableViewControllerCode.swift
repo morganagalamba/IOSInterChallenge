@@ -16,6 +16,8 @@ class PostTableViewControllerCode: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Postagens de \(userName)"
+        tableView.backgroundColor = .white
+        //tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TitleAndDescriptionTableViewCellCode.self, forCellReuseIdentifier: TitleAndDescriptionTableViewCellCode.identifier)
         fillPosts(from: userId)
     }
@@ -55,12 +57,9 @@ class PostTableViewControllerCode: UITableViewController {
         let post = posts[indexPath.row]
         cell.titleLabel.text = post.title
         cell.descriptionLabel.text = post.body
-
+        
+       
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
