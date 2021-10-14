@@ -1,13 +1,21 @@
+//
+//  ChallengeTableViewControllerCode.swift
+//  InterChallenge
+//
+//  Created by Morgana Galamba on 13/10/21.
+//
 import Alamofire
 import UIKit
 
-class ChallengeViewController: UITableViewController {
+class ChallengeTableViewControllerCode: UITableViewController {
+    
     
     var users = [User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserCell")
+        navigationItem.title = "Desafio"
+        tableView.register(UserTableViewCellCode.self, forCellReuseIdentifier: UserTableViewCellCode.identifier)
         fillUsers()
     }
     
@@ -38,8 +46,12 @@ class ChallengeViewController: UITableViewController {
         return users.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCellCode.identifier, for: indexPath) as? UserTableViewCellCode else {
             return UITableViewCell()
         }
         let user = users[indexPath.row]
@@ -54,11 +66,10 @@ class ChallengeViewController: UITableViewController {
         cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor(white: 0.667, alpha: 0.2)
         return cell
     }
-    
-    
+
 }
 
-extension ChallengeViewController: UserTableViewCellDelegate {
+extension ChallengeTableViewControllerCode: UserTableViewCellDelegate {
     func didTapAlbums(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
         //performSegue(withIdentifier: "challengeToAlbum", sender: userIdAndName)
@@ -70,6 +81,7 @@ extension ChallengeViewController: UserTableViewCellDelegate {
     
     func didTapPosts(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
+        print("hiii")
         //performSegue(withIdentifier: "challengeToPost", sender: userIdAndName)
         let rootVC = PostTableViewControllerCode()
         rootVC.userId = userIdAndName.id

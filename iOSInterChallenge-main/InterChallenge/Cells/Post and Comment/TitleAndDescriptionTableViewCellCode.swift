@@ -14,7 +14,9 @@ class TitleAndDescriptionTableViewCellCode: UITableViewCell {
     public let titleLabel : UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 21, weight: .bold)
+        label.font = .systemFont(ofSize: 21, weight: .medium)
+        label.numberOfLines = 500
+        label.clipsToBounds = true
         return label
     }()
     
@@ -22,6 +24,8 @@ class TitleAndDescriptionTableViewCellCode: UITableViewCell {
         let label = UILabel()
         label.textColor = .black
         label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.numberOfLines = 500
+        label.clipsToBounds = true
         return label
     }()
 
@@ -40,7 +44,7 @@ class TitleAndDescriptionTableViewCellCode: UITableViewCell {
         super.layoutSubviews()
 
         titleLabel.frame = CGRect(x: 10, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
-        descriptionLabel.frame = CGRect(x: 10, y: 25, width: contentView.frame.size.width, height: contentView.frame.size.height)
+        descriptionLabel.frame = CGRect(x: 10, y: 60, width: contentView.frame.size.width, height: contentView.frame.size.height)
                 
     }
 
