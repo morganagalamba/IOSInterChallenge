@@ -59,7 +59,8 @@ class ChallengeTableViewControllerCode: UITableViewController {
         cell.emailLabel.text = user.email
         cell.phoneLabel.text = user.phone
         cell.delegate = self
-        cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor(white: 0.667, alpha: 0.2)
+        cell.backgroundColor = indexPath.row % 2 == 0 ? .white : UIColor(white: 0.667, alpha: 0.2)
+        
         return cell
     }
 

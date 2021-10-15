@@ -83,7 +83,7 @@ class UserTableViewCellCode: UITableViewCell {
         label.numberOfLines = 2
         label.baselineAdjustment = .alignBaselines
         label.lineBreakMode = .byTruncatingTail
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.clearsContextBeforeDrawing = true
         label.autoresizesSubviews = true
         
@@ -133,7 +133,7 @@ class UserTableViewCellCode: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
+        contentView.clipsToBounds = true
         contentView.addSubview(initialsBackground)
         initialsBackground.addSubview(initialsLabel)
         contentView.addSubview(nameLabel)
