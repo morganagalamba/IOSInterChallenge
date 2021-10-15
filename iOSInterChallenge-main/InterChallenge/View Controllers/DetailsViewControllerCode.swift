@@ -12,20 +12,65 @@ class DetailsViewControllerCode: UIViewController {
     var photo = UIImage()
     var name = String()
     
+    var photoTitle = UILabel()
+    var imageView = UIImageView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        let photoTitle = UILabel()
+        view.clipsToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = true
+        navigationItem.title = "Detalhes"
+
         photoTitle.text = name
-        photoTitle.textColor = .black
-        photoTitle.frame = CGRect(x: 50, y: 420, width: 300, height: 20)
+        photoTitle.font = .systemFont(ofSize: 17, weight: .regular)
+        photoTitle.translatesAutoresizingMaskIntoConstraints = false
+        photoTitle.numberOfLines = 5
+        photoTitle.baselineAdjustment = .alignBaselines
+        photoTitle.lineBreakMode = .byTruncatingTail
+        photoTitle.clipsToBounds = true
+        photoTitle.textAlignment = .left
+        photoTitle.autoresizesSubviews = true
+  
         
-        let imageView = UIImageView(image: photo)
-        imageView.frame = CGRect(x: 50, y: 100, width: 300, height: 300)
+        imageView = UIImageView(image: photo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.clipsToBounds = true
+        imageView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         
 
         view.addSubview(imageView)
         view.addSubview(photoTitle)
+        setupConstraints()
+    }
+    
+    private func setupConstraints(){
+        let safeArea = view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -24),
+            imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24),
+            imageView.bottomAnchor.constraint(equalTo: photoTitle.topAnchor ,constant: 16),
+            imageView.topAnchor.constraint(equalTo: safeArea.topAnchor,constant: 16),
+ 
+        ])
+        
+        NSLayoutConstraint.activate([
+            photoTitle.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -24),
+            photoTitle.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24),
+            photoTitle.topAnchor.constraint(equalTo: imageView.bottomAnchor ,constant: 16)
+        ])
+        
+        imageView.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
+        imageView.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
+        imageView.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
+        imageView.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
+        
+        photoTitle.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
+        photoTitle.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
+        photoTitle.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
+        photoTitle.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
     }
 }

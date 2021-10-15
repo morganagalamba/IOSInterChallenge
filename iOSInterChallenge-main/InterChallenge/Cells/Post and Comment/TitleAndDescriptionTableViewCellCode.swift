@@ -14,7 +14,6 @@ class TitleAndDescriptionTableViewCellCode: UITableViewCell {
 
     public let titleLabel : UILabel = {
         let label = UILabel()
-        //label.textColor = .black
         label.font = .systemFont(ofSize: 21, weight: .regular)
         label.numberOfLines = 2
         label.baselineAdjustment = .alignBaselines
@@ -30,7 +29,6 @@ class TitleAndDescriptionTableViewCellCode: UITableViewCell {
     
     public let descriptionLabel : UILabel = {
         let label = UILabel()
-        //label.textColor = .red
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.baselineAdjustment = .alignBaselines
         label.lineBreakMode = .byTruncatingTail
