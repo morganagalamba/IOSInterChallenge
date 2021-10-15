@@ -61,7 +61,7 @@ class UserTableViewCellCode: UITableViewCell {
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.contentMode = .left
+        label.textAlignment = .center
         label.baselineAdjustment = .alignCenters
         label.lineBreakMode = .byTruncatingTail
         label.autoresizesSubviews = true
@@ -222,16 +222,6 @@ class UserTableViewCellCode: UITableViewCell {
             buttonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8 )
             
         ])
-        
-        userNameLabel.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
-        userNameLabel.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
-        userNameLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
-        userNameLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
-        
-        emailLabel.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
-        emailLabel.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
-        emailLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
-        emailLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
 
     }
 
