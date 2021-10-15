@@ -1,16 +1,23 @@
+//
+//  PhotoTableViewControllerCode.swift
+//  InterChallenge
+//
+//  Created by Morgana Galamba on 13/10/21.
+//
+
 import Alamofire
 import UIKit
 
-class PhotoTableViewController: UITableViewController {
-
+class PhotoTableViewControllerCode: UITableViewController {
+    
     var albumId = Int()
     var userName = String()
     var photos = [Photo]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Fotos de \(userName)"
-        tableView.register(UINib(nibName: "PhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "PhotoCell")
+        tableView.register(PhotoTableViewCellCode.self, forCellReuseIdentifier: PhotoTableViewCellCode.identifier)
         fillPhotos(from: albumId)
     }
     
@@ -36,24 +43,24 @@ class PhotoTableViewController: UITableViewController {
             }
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return photos.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as? PhotoTableViewCell else {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCellCode.identifier, for: indexPath) as? PhotoTableViewCellCode else {
             return UITableViewCell()
         }
 
         let photo = photos[indexPath.row]
-        cell.titleLabel.text = photo.title
-
+        cell.myLabel.text = photo.title
+        
         AF.download(photo.thumbnailUrl).responseData { response in
             switch response.result {
             case .success(let data):
-                cell.photoImageView.image = UIImage(data: data)
+                cell.myImageView.image = UIImage(data: data)
             default:
                 break
             }
@@ -62,27 +69,23 @@ class PhotoTableViewController: UITableViewController {
         return cell
     }
     
+   
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let photo = photos[indexPath.row]
         AF.download(photo.url).responseData { response in
             switch response.result {
             case .success(let data):
-                self.performSegue(withIdentifier: "photoToDetail",
-                                  sender: (photo: UIImage(data: data), name: photo.title))
+                let rootVC = DetailsViewControllerCode()
+                rootVC.photo = UIImage(data: data)!
+                rootVC.name = photo.title
+                
+                self.navigationController?.pushViewController(rootVC, animated: true)
+
             default:
                 break
             }
         }
     }
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinatinVC = segue.destination as? DetailsViewController {
-            if let info = sender as? (photo: UIImage, name: String) {
-                destinatinVC.photo = info.photo
-                destinatinVC.name = info.name
-            }
-        }
-    }
+    
 }
+
