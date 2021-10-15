@@ -23,6 +23,7 @@ class UserTableViewCellCode: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("POSTAGENS", for: .normal)
         button.setTitleColor(.systemOrange, for: .normal)
+        button.titleLabel?.font = UIFont(name: "System", size: 15)
         return button
     }()
     
@@ -31,6 +32,7 @@ class UserTableViewCellCode: UITableViewCell {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("ÁLBUNS", for: .normal)
         button.setTitleColor(.systemOrange, for: .normal)
+        button.titleLabel?.font = UIFont(name: "System", size: 15)
         return button
     }()
     
@@ -121,6 +123,8 @@ class UserTableViewCellCode: UITableViewCell {
         stack.axis = .horizontal
         stack.spacing = 16.0
         stack.alignment = .center
+        stack.distribution = .fillEqually
+        stack.autoresizesSubviews = true
         return stack
     }()
 
@@ -133,15 +137,13 @@ class UserTableViewCellCode: UITableViewCell {
         contentView.addSubview(initialsBackground)
         initialsBackground.addSubview(initialsLabel)
         contentView.addSubview(nameLabel)
-        
         contentView.addSubview(separator)
-        
         contentView.addSubview(userNameLabel)
         contentView.addSubview(emailLabel)
         contentView.addSubview(phoneLabel)
         
-        buttonStackView.addArrangedSubview(postsButton)
         buttonStackView.addArrangedSubview(albumsButton)
+        buttonStackView.addArrangedSubview(postsButton)
         contentView.addSubview(buttonStackView)
         
         postsButton.addTarget(self, action: #selector(didTapPostsButton), for: .touchUpInside)
@@ -220,7 +222,16 @@ class UserTableViewCellCode: UITableViewCell {
             buttonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8 )
             
         ])
-
+        
+        userNameLabel.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
+        userNameLabel.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
+        userNameLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
+        userNameLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
+        
+        emailLabel.setContentHuggingPriority(.init(rawValue: 251), for: .vertical)
+        emailLabel.setContentHuggingPriority(.init(rawValue: 251), for: .horizontal)
+        emailLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .vertical)
+        emailLabel.setContentCompressionResistancePriority(.init(rawValue: 750), for: .horizontal)
 
     }
 
