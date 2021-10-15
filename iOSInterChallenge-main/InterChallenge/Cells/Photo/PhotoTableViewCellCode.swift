@@ -55,10 +55,9 @@ class PhotoTableViewCellCode: UITableViewCell {
         
         NSLayoutConstraint.activate([
             myImageView.widthAnchor.constraint(equalToConstant: 150),
-            myImageView.heightAnchor.constraint(equalTo: myImageView.widthAnchor),
+            myImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 150),
             myImageView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 8),
             myImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            //myImageView.trailingAnchor.constraint(equalTo: myLabel.leadingAnchor, constant: 16),
             myImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
         ])
         
