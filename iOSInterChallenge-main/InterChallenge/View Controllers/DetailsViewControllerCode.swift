@@ -38,7 +38,7 @@ class DetailsViewControllerCode: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
-        imageView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
+        //imageView.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
         
 
         view.addSubview(imageView)
@@ -50,6 +50,8 @@ class DetailsViewControllerCode: UIViewController {
         let safeArea = view.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 250),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor),
             imageView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -24),
             imageView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 24),
             imageView.bottomAnchor.constraint(equalTo: photoTitle.topAnchor ,constant: 16),

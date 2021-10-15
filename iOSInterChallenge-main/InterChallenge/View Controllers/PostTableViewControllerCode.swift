@@ -67,6 +67,7 @@ class PostTableViewControllerCode: UITableViewController {
         
         let rootVC = CommentTableViewControllerCode()
         rootVC.postId = postId
+        rootVC.userName = userName
         self.navigationController?.pushViewController(rootVC, animated: true)
 
         
