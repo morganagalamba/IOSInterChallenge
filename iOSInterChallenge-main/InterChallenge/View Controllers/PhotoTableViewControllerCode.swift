@@ -18,7 +18,6 @@ class PhotoTableViewControllerCode: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Fotos de \(userName)"
         tableView.register(PhotoTableViewCellCode.self, forCellReuseIdentifier: PhotoTableViewCellCode.identifier)
-        tableView.backgroundColor = .white
         fillPhotos(from: albumId)
     }
     

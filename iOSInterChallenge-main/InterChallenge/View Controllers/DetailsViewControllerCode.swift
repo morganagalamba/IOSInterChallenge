@@ -30,7 +30,7 @@ class DetailsViewControllerCode: UIViewController {
         photoTitle.baselineAdjustment = .alignBaselines
         photoTitle.lineBreakMode = .byTruncatingTail
         photoTitle.clipsToBounds = true
-        photoTitle.textAlignment = .left
+        photoTitle.contentMode = .left
         photoTitle.autoresizesSubviews = true
   
         

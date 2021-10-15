@@ -68,6 +68,7 @@ class AlbumTableViewControllerCode: UITableViewController {
         let albumId = albums[indexPath.row].id
         let rootVC = PhotoTableViewControllerCode()
         rootVC.albumId = albumId
+        rootVC.userName = userName
         self.navigationController?.pushViewController(rootVC, animated: true)
 
     }

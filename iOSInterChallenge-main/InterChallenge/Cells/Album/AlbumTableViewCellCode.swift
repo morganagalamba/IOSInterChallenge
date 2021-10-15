@@ -13,8 +13,9 @@ class AlbumTableViewCellCode: UITableViewCell {
 
     public let albumNameLabel : UILabel = {
         let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 21, weight: .regular)
+        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.contentMode = .left
         return label
     }()
 
