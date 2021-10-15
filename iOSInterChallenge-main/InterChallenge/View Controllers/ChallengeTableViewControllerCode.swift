@@ -46,10 +46,6 @@ class ChallengeTableViewControllerCode: UITableViewController {
         return users.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserTableViewCellCode.identifier, for: indexPath) as? UserTableViewCellCode else {
             return UITableViewCell()
@@ -72,7 +68,6 @@ class ChallengeTableViewControllerCode: UITableViewController {
 extension ChallengeTableViewControllerCode: UserTableViewCellDelegate {
     func didTapAlbums(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
-        //performSegue(withIdentifier: "challengeToAlbum", sender: userIdAndName)
         let rootVC = AlbumTableViewControllerCode()
         rootVC.userId = userIdAndName.id
         rootVC.userName = userIdAndName.name
@@ -81,8 +76,6 @@ extension ChallengeTableViewControllerCode: UserTableViewCellDelegate {
     
     func didTapPosts(with userId: Int, by name: String) {
         let userIdAndName = (id: userId, name: name)
-        print("hiii")
-        //performSegue(withIdentifier: "challengeToPost", sender: userIdAndName)
         let rootVC = PostTableViewControllerCode()
         rootVC.userId = userIdAndName.id
         rootVC.userName = userIdAndName.name

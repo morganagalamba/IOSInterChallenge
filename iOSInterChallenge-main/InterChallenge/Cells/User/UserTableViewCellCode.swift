@@ -20,6 +20,7 @@ class UserTableViewCellCode: UITableViewCell {
     
     public let postsButton : UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("POSTAGENS", for: .normal)
         button.setTitleColor(.systemOrange, for: .normal)
         return button
@@ -27,6 +28,7 @@ class UserTableViewCellCode: UITableViewCell {
     
     public let albumsButton : UIButton = {
         let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("ÁLBUNS", for: .normal)
         button.setTitleColor(.systemOrange, for: .normal)
         return button
@@ -35,128 +37,112 @@ class UserTableViewCellCode: UITableViewCell {
     public let initialsLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
-        label.translatesAutoresizingMaskIntoConstraints = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .systemYellow
+        label.baselineAdjustment = .alignBaselines
+        label.lineBreakMode = .byTruncatingTail
         label.textAlignment = .center
+        label.clearsContextBeforeDrawing = true
+        label.autoresizesSubviews = true
         return label
+    }()
+    
+    public let initialsBackground : UIView = {
+        let background = UIView()
+        background.translatesAutoresizingMaskIntoConstraints = false
+        background.backgroundColor = .systemYellow
+        return background
     }()
     
     public let nameLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
-        label.translatesAutoresizingMaskIntoConstraints = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.contentMode = .center
-        label.baselineAdjustment = .alignBaselines
+        label.contentMode = .left
+        label.baselineAdjustment = .alignCenters
         label.lineBreakMode = .byTruncatingTail
+        label.autoresizesSubviews = true
+        
         return label
     }()
     
     let separator : UIView = {
         let div = UIView()
-        div.translatesAutoresizingMaskIntoConstraints = true
+        div.translatesAutoresizingMaskIntoConstraints = false
         div.backgroundColor = .lightGray
-        
         return div
     }()
     
     public let userNameLabel : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.numberOfLines = 2
-        //label.contentMode = .center
         label.baselineAdjustment = .alignBaselines
+        label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .left
+        label.clearsContextBeforeDrawing = true
+        label.autoresizesSubviews = true
+        
         label.clipsToBounds = true
         return label
     }()
     
     public let emailLabel : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.numberOfLines = 500
-        label.clipsToBounds = true
+        label.baselineAdjustment = .alignBaselines
+        label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .left
+        label.clearsContextBeforeDrawing = true
+        label.autoresizesSubviews = true
         return label
     }()
     
     public let phoneLabel : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.numberOfLines = 500
-        label.clipsToBounds = true
+        label.baselineAdjustment = .alignBaselines
+        label.lineBreakMode = .byTruncatingTail
+        label.textAlignment = .left
+        label.clearsContextBeforeDrawing = true
+        label.autoresizesSubviews = true
         return label
     }()
-    
-    public let stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 16.0
-        stack.alignment = .fill
-        stack.distribution = .fillEqually
-        return stack
-    }()
-    
-    public let nameStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 16.0
-        stack.alignment = .center
-        stack.distribution = .equalSpacing
-        return stack
-    }()
-    
-    public let userStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .horizontal
-        stack.spacing = 16.0
-        stack.alignment = .fill
-        return stack
-    }()
-    
+   
     public let buttonStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.spacing = 16.0
-  
         stack.alignment = .center
         return stack
     }()
-    
-    public let viewStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        //stack.spacing = 16.0
-        //stack.alignment = .center
-        return stack
-    }()
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        contentView.translatesAutoresizingMaskIntoConstraints = true
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         
-        nameStackView.addArrangedSubview(initialsLabel)
-        nameStackView.addArrangedSubview(nameLabel)
-        contentView.addSubview(nameStackView)
+        contentView.addSubview(initialsBackground)
+        initialsBackground.addSubview(initialsLabel)
+        contentView.addSubview(nameLabel)
         
-        stackView.addArrangedSubview(userNameLabel)
-        stackView.addArrangedSubview(emailLabel)
-        stackView.addArrangedSubview(phoneLabel)
-        contentView.addSubview(stackView)
-        userStackView.addArrangedSubview(nameStackView)
-        userStackView.addArrangedSubview(separator)
-        userStackView.addArrangedSubview(stackView)
-        contentView.addSubview(userStackView)
+        contentView.addSubview(separator)
+        
+        contentView.addSubview(userNameLabel)
+        contentView.addSubview(emailLabel)
+        contentView.addSubview(phoneLabel)
+        
         buttonStackView.addArrangedSubview(postsButton)
         buttonStackView.addArrangedSubview(albumsButton)
         contentView.addSubview(buttonStackView)
-        viewStackView.addArrangedSubview(userStackView)
-        viewStackView.addArrangedSubview(buttonStackView)
-        contentView.addSubview(viewStackView)
         
         postsButton.addTarget(self, action: #selector(didTapPostsButton), for: .touchUpInside)
         
@@ -181,43 +167,60 @@ class UserTableViewCellCode: UITableViewCell {
     private func setupConstraints(){
         
         NSLayoutConstraint.activate([
+            initialsBackground.heightAnchor.constraint(equalToConstant: 88),
+            initialsBackground.widthAnchor.constraint(equalToConstant: 88),
+            initialsBackground.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 16),
+            initialsBackground.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16)
+        ])
+        
+        
+        NSLayoutConstraint.activate([
             initialsLabel.heightAnchor.constraint(equalToConstant: 88),
-            initialsLabel.widthAnchor.constraint(equalTo: initialsLabel.heightAnchor),
-            initialsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 16),
-            initialsLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16)
+            initialsLabel.widthAnchor.constraint(equalToConstant: 88),
         ])
         
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            nameLabel.topAnchor.constraint(equalTo: initialsLabel.bottomAnchor,constant: 16)
+            nameLabel.topAnchor.constraint(equalTo: initialsBackground.bottomAnchor,constant: 16),
         ])
         
         
         NSLayoutConstraint.activate([
-            separator.widthAnchor.constraint(equalToConstant: 1),
-            separator.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: 24)
+            separator.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 32),
+            separator.leadingAnchor.constraint(equalTo: initialsBackground.trailingAnchor, constant: 32),
+            separator.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            separator.widthAnchor.constraint(equalToConstant: 2),
+            separator.bottomAnchor.constraint(equalTo: buttonStackView.topAnchor, constant: -24)
         ])
         
-        NSLayoutConstraint.activate([
-            userNameLabel.leadingAnchor.constraint(equalTo: separator.trailingAnchor, constant: 16),
-            userNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
-        ])
         
-        NSLayoutConstraint.activate([
-            userNameLabel.leadingAnchor.constraint(equalTo: separator.trailingAnchor, constant: 16),
+      NSLayoutConstraint.activate([
+            userNameLabel.leadingAnchor.constraint(equalTo: separator.leadingAnchor, constant: 16),
             userNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            userNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            userNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16)
         ])
         
         NSLayoutConstraint.activate([
-            emailLabel.leadingAnchor.constraint(equalTo: separator.trailingAnchor, constant: 16),
-            emailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            emailLabel.leadingAnchor.constraint(equalTo: separator.leadingAnchor, constant: 16),
+            emailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            emailLabel.topAnchor.constraint(equalTo: userNameLabel.bottomAnchor, constant: 24)
         ])
         
         NSLayoutConstraint.activate([
             phoneLabel.leadingAnchor.constraint(equalTo: separator.trailingAnchor, constant: 16),
-            phoneLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+            phoneLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            phoneLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 24)
         ])
+        
+        NSLayoutConstraint.activate([
+            buttonStackView.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 24),
+            buttonStackView.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor, constant: 64),
+            buttonStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            buttonStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            buttonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8 )
+            
+        ])
+
 
     }
 
