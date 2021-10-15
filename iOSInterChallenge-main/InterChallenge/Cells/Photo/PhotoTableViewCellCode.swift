@@ -41,7 +41,6 @@ class PhotoTableViewCellCode: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
         contentView.translatesAutoresizingMaskIntoConstraints = true
-        
         contentView.addSubview(myImageView)
         contentView.addSubview(myLabel)
         setupConstraints()

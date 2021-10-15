@@ -83,7 +83,7 @@ class UserTableViewCellCode: UITableViewCell {
         label.numberOfLines = 2
         label.baselineAdjustment = .alignBaselines
         label.lineBreakMode = .byTruncatingTail
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.clearsContextBeforeDrawing = true
         label.autoresizesSubviews = true
         

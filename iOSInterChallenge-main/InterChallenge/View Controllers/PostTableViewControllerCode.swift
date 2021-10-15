@@ -17,7 +17,6 @@ class PostTableViewControllerCode: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Postagens de \(userName)"
         tableView.backgroundColor = .white
-        //tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(TitleAndDescriptionTableViewCellCode.self, forCellReuseIdentifier: TitleAndDescriptionTableViewCellCode.identifier)
         fillPosts(from: userId)
     }
